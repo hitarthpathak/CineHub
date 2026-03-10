@@ -10,13 +10,11 @@ function Footer() {
 
             <p className="footer-paragraph h-auto w-1/2 text-center text-[0.7rem]">
 
-                CineHub is a free streaming platform where you can watch movies for free.
-                It has a vast collection of content in multiple genres.
-                Enjoy watching your favorite movie for free with no sign-up required and no ads.
+                CineHub is a free streaming platform where you can watch and download movies for free with no ads and no sign-up required.
 
             </p>
 
-            <p className="creator h-auto w-1/2 text-center text-[0.7rem] cursor-pointer hover:underline" onClick={() => window.open("https://hitarthpathak.github.io/", "_blank")}>
+            <p className="creator h-auto w-auto text-center text-[0.7rem] cursor-pointer hover:underline" onClick={() => window.open("https://hitarthpathak.github.io/", "_blank")}>
 
                 © Hitarth Pathak
 
