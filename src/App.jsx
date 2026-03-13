@@ -9,7 +9,6 @@ import Movie_Details from "./pages/Movie_Details";
 import Movie_Streaming from "./pages/Movie_Streaming";
 import Footer from "./components/Footer";
 import Page_Not_Found from "./pages/Page_Not_Found";
-import Theme from "./audio/Theme.mp3";
 import Genre_List from "./components/Genre_List";
 
 export const Context_API = createContext();
@@ -17,11 +16,6 @@ export const Context_API = createContext();
 function App() {
 
   const [movies_collection, set_movies_collection] = useState([]);
-
-  useEffect(() => {
-    let theme = new Audio(Theme);
-    theme.play();
-  }, []);
 
   useEffect(() => {
     axios.get("https://hitarthpathak.github.io/Free-API/Movies-Collection.json")

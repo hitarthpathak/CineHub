@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
+import Theme from "../audio/Theme.mp3";
 import CineHub from "../../public/CineHub.jpg";
 
 function Navbar() {
@@ -8,6 +9,7 @@ function Navbar() {
     const location = useLocation();
 
     const [search_value, set_search_value] = useState("");
+    const theme = new Audio(Theme);
 
     useEffect(() => {
         const searched_query = location.pathname.match(/\/search\/query\/([^/]+)/);
@@ -17,6 +19,10 @@ function Navbar() {
             set_search_value("");
         }
     }, [location]);
+
+    function play_theme() {
+        theme.play();
+    };
 
     function search_movie(event) {
         event.preventDefault();
@@ -29,7 +35,7 @@ function Navbar() {
 
             <div className="cinehub-icon-box h-full w-auto flex items-center justify-center">
 
-                <Link to="/">
+                <Link to="/" onClick={play_theme}>
 
                     <img className="cinehub-icon h-[2.5rem] w-auto cursor-pointer" src={CineHub} alt="CineHub" />
 
@@ -51,7 +57,7 @@ function Navbar() {
 
             <div className="cinehub-icon-box h-full w-auto flex items-center justify-center">
 
-                <Link to="/">
+                <Link to="/" onClick={play_theme}>
 
                     <img className="cinehub-icon h-[2.5rem] w-auto cursor-pointer" src={CineHub} alt="CineHub" />
 
